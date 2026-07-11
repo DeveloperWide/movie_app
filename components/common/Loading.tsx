@@ -1,12 +1,16 @@
 import React from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
-const Loading = () => {
+interface LoadingProps {
+  loadingMsg: string;
+}
+
+const Loading = ({ loadingMsg }: LoadingProps) => {
   return (
     <View style={styles.container}>
       <ActivityIndicator size="large" color="#2E7D32" />
 
-      <Text style={styles.text}>Loading movies...</Text>
+      <Text style={styles.text}>{loadingMsg}</Text>
     </View>
   );
 };

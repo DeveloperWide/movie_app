@@ -10,7 +10,7 @@ export default function MovieDetailsScreen() {
   const { isLoading, data, error } = useMovieDetails(Number(id));
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading loadingMsg="loading Movie Details..." />;
   }
 
   if (error) {

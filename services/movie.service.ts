@@ -1,8 +1,11 @@
 import { BASE_URL, OPTIONS } from "@/constants/config";
 import { Movie } from "@/types/movie";
 
-export const getTrendingMovies = async (): Promise<Movie[]> => {
-  const res = await fetch(`${BASE_URL}/trending/movie/day`, OPTIONS);
+export const getTrendingMovies = async (page: number): Promise<Movie[]> => {
+  const res = await fetch(
+    `${BASE_URL}/trending/movie/day?page=${page}`,
+    OPTIONS,
+  );
   if (!res.ok) {
     throw new Error("Failed to fetch movies");
   }

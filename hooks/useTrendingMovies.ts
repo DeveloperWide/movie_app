@@ -7,12 +7,12 @@ export function useTrendingMovies() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchTrendingMovies = async () => {
+  const fetchTrendingMovies = async (page: number) => {
     try {
       setIsLoading(true);
       setError(null);
 
-      const movies = await getTrendingMovies();
+      const movies = await getTrendingMovies((page = 1)); // Fetch the first page of trending movies
       setMovies(movies);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something Went Wrong");
