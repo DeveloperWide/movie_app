@@ -8,3 +8,4 @@ export const OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MjJkMDQ4MWI1OTM4MzZiN2QwZTI2MjZkOGRiOTJjMCIsIm5iZiI6MTc4MzUyNDA3MC4xMjMwMDAxLCJzdWIiOiI2YTRlNmFlNjJkODE0MWY1ZmFkNjNmZDgiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.uxBN_7ZChDMvwxtCQ-7n5vflrLHE8cEqqsdHoLJYRtU",
   },
 };
+export const FAVORITES_KEY = "@favorites";

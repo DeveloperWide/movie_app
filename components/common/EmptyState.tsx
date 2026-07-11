@@ -1,23 +1,24 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-interface ErrorProps {
-  err: string;
+interface EmptyStateProps {
+  title: string;
+  subtitle: string;
 }
 
-const Error = ({ err }: ErrorProps) => {
+const EmptyState = ({ title, subtitle }: EmptyStateProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.icon}>⚠️</Text>
+      <Text style={styles.icon}>🎬</Text>
 
-      <Text style={styles.title}>Something went wrong</Text>
+      <Text style={styles.title}>{title}</Text>
 
-      <Text style={styles.message}>{err}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
   );
 };
 
-export default Error;
+export default EmptyState;
 
 const styles = StyleSheet.create({
   container: {
@@ -25,22 +26,23 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 30,
+    marginTop: 80,
   },
 
   icon: {
     fontSize: 60,
-    marginBottom: 16,
+    marginBottom: 20,
   },
 
   title: {
     fontSize: 24,
     fontWeight: "700",
     color: "#222",
-    marginBottom: 10,
     textAlign: "center",
+    marginBottom: 8,
   },
 
-  message: {
+  subtitle: {
     fontSize: 16,
     color: "#666",
     textAlign: "center",

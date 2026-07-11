@@ -5,7 +5,7 @@ import { useMovieDetails } from "@/hooks/useMovieDetails";
 import { useLocalSearchParams } from "expo-router";
 import React from "react";
 
-const MovieDetailsScreen = () => {
+export default function MovieDetailsScreen() {
   const { id } = useLocalSearchParams();
   const { isLoading, data, error } = useMovieDetails(Number(id));
 
@@ -20,6 +20,4 @@ const MovieDetailsScreen = () => {
   if (!data) return null;
 
   return <MovieDetails data={data} />;
-};
-
-export default MovieDetailsScreen;
+}

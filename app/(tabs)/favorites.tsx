@@ -1,13 +1,13 @@
 import Error from "@/components/common/Error";
-import Header from "@/components/common/Header";
 import Loading from "@/components/common/Loading";
 import MovieCard from "@/components/movie/MovieCard";
-import { useTrendingMovies } from "@/hooks/useTrendingMovies";
-import { Link } from "expo-router";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { useFavorites } from "@/hooks/useFavorites";
+import React from "react";
+import { FlatList, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function Index() {
-  const { data, isLoading, error } = useTrendingMovies();
+export default function Favorites() {
+  const { favorites, isLoading, error } = useFavorites();
 
   if (isLoading) {
     return <Loading />;
@@ -18,17 +18,17 @@ export default function Index() {
   }
 
   return (
-    <View style={styles.container}>
-      <Header />
-      <Link href={"/search"}>
-        <Text>Search</Text>
-      </Link>
+    <SafeAreaView style={styles.container}>
       <FlatList
-        data={data}
+        data={favorites}
         renderItem={({ item }) => <MovieCard movie={item} />}
         keyExtractor={(item) => item.id.toString()}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: 30,
+        }}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
