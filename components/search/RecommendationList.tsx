@@ -8,7 +8,7 @@ import MovieCard from "../movie/MovieCard";
 const RecommendationList = () => {
   const { data, isLoading, error } = useTrendingMovies();
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading loadingMsg="Loading Recommendation..." />;
 
   if (error) return <Error err={error} />;
 

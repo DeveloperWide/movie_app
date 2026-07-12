@@ -13,7 +13,7 @@ interface SearchResultsProps {
 const SearchResults = ({ query }: SearchResultsProps) => {
   const { data, isLoading, error } = useSearchMovies(query);
 
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading loadingMsg="Searching for Movie..." />;
 
   if (error) return <Error err={error} />;
 

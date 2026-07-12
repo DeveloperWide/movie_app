@@ -4,17 +4,18 @@ import Loading from "@/components/common/Loading";
 import MovieCard from "@/components/movie/MovieCard";
 import { useTrendingMovies } from "@/hooks/useTrendingMovies";
 import { useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 
 export default function Index() {
   const [refreshing, setRefreshing] = useState(false);
-  const { data, isLoading, error, refetch } = useTrendingMovies();
+  const { data, isLoading, loadingMore, error, refetch, loadMore } =
+    useTrendingMovies();
 
   const handleRefresh = async () => {
     try {
       setRefreshing(true);
 
-      await refetch(1);
+      await refetch();
 
       setRefreshing(false);
     } finally {
@@ -35,12 +36,23 @@ export default function Index() {
       <Header />
       <FlatList
         data={data}
+        renderItem={({ item }) => <MovieCard movie={item} />}
+        keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.listContent}
         refreshing={refreshing}
         onRefresh={handleRefresh}
-        renderItem={({ item }) => <MovieCard movie={item} />}
-        keyExtractor={(item) => item.id.toString()}
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.5}
+        ListFooterComponent={
+          loadingMore ? (
+            <ActivityIndicator
+              size="large"
+              color="#2563EB"
+              style={{ marginVertical: 20 }}
+            />
+          ) : null
+        }
       />
     </View>
   );

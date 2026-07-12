@@ -10,7 +10,7 @@ export default function Favorites() {
   const { favorites, isLoading, error } = useFavorites();
 
   if (isLoading) {
-    return <Loading />;
+    return <Loading loadingMsg="Loading Favorites" />;
   }
 
   if (error) {

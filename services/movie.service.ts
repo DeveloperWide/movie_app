@@ -1,7 +1,7 @@
 import { BASE_URL, OPTIONS } from "@/constants/config";
-import { Movie } from "@/types/movie";
+import { APIResponse, Movie } from "@/types/movie";
 
-export const getTrendingMovies = async (page: number): Promise<Movie[]> => {
+export const getTrendingMovies = async (page: number): Promise<APIResponse> => {
   const res = await fetch(
     `${BASE_URL}/trending/movie/day?page=${page}`,
     OPTIONS,
@@ -11,7 +11,7 @@ export const getTrendingMovies = async (page: number): Promise<Movie[]> => {
   }
   const data = await res.json();
 
-  return data.results;
+  return data;
 };
 
 export const getMovieDetails = async (id: number): Promise<Movie> => {
