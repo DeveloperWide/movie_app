@@ -4,7 +4,7 @@ import { FlatList } from "react-native";
 import EmptyState from "../common/EmptyState";
 import Error from "../common/Error";
 import Loading from "../common/Loading";
-import MovieCard from "../movie/MovieCard";
+import MovieCard from "../movie/cards/MovieCard";
 
 interface SearchResultsProps {
   query: string;

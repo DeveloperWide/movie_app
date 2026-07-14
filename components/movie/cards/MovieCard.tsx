@@ -1,10 +1,10 @@
+import FavoritesButton from "@/components/common/FavoritesButton";
 import { IMAGE_BASE_URL } from "@/constants/config";
 import { Movie } from "@/types/movie";
 import { formatDate } from "@/utils/helper";
 import { router } from "expo-router";
 import React from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import FavoritesButton from "../common/FavoritesButton";
 
 interface MovieCardProps {
   movie: Movie;

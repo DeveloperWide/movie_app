@@ -1,7 +1,7 @@
 import Error from "@/components/common/Error";
 import Header from "@/components/common/Header";
 import Loading from "@/components/common/Loading";
-import MovieCard from "@/components/movie/MovieCard";
+import MovieCard from "@/components/movie/cards/MovieCard";
 import { useTrendingMovies } from "@/hooks/useTrendingMovies";
 import { useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";

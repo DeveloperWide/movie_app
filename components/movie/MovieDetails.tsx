@@ -5,6 +5,9 @@ import React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FavoritesButton from "../common/FavoritesButton";
+import MovieCast from "./MovieCast";
+import MovieTrailer from "./MovieTrailer";
+import SimilarMovies from "./SimilarMovies";
 
 interface MovieDetailsProps {
   data: Movie;
@@ -25,7 +28,6 @@ const MovieDetails = ({ data }: MovieDetailsProps) => {
           }}
           style={styles.backdrop}
         />
-
         {/* Poster + Info */}
         <View style={styles.detailsContainer}>
           <Image
@@ -67,9 +69,7 @@ const MovieDetails = ({ data }: MovieDetailsProps) => {
             </Text>
           </View>
         </View>
-
         {/* Overview */}
-
         <View style={styles.overviewContainer}>
           <Text style={styles.sectionTitle}>Overview</Text>
 
@@ -77,6 +77,11 @@ const MovieDetails = ({ data }: MovieDetailsProps) => {
 
           <Text style={styles.overview}>{data.overview}</Text>
         </View>
+        <SimilarMovies movieId={data.id} />
+        <MovieCast movieId={data.id} />
+        <MovieTrailer movieId={data.id} />
+        {/* Trailer */}
+        {/* Production Companies */}
       </ScrollView>
     </SafeAreaView>
   );

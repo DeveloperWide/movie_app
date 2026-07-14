@@ -3,7 +3,7 @@ import React from "react";
 import { FlatList, StyleSheet } from "react-native";
 import Error from "../common/Error";
 import Loading from "../common/Loading";
-import MovieCard from "../movie/MovieCard";
+import MovieCard from "../movie/cards/MovieCard";
 
 const RecommendationList = () => {
   const { data, isLoading, error } = useTrendingMovies();

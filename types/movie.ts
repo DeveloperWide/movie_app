@@ -19,3 +19,32 @@ export interface APIResponse {
   total_pages: number;
   total_results: number;
 }
+
+export interface Cast {
+  id: number;
+  known_for_department: string;
+  name: string;
+  profile_path: string;
+  character: string;
+}
+
+export interface Review {
+  id: string;
+  author: string;
+  author_details: {
+    username: string;
+    avatar_path: string | null;
+    rating: number | null;
+  };
+  content: string;
+  created_at: string;
+}
+
+export interface Video {
+  id: string;
+  key: string;
+  name: string;
+  site: string;
+  type: string;
+  official: boolean;
+}

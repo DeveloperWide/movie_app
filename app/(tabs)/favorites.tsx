@@ -1,6 +1,6 @@
 import Error from "@/components/common/Error";
 import Loading from "@/components/common/Loading";
-import MovieCard from "@/components/movie/MovieCard";
+import MovieCard from "@/components/movie/cards/MovieCard";
 import { useFavorites } from "@/hooks/useFavorites";
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";

@@ -1,5 +1,5 @@
 import { getTrendingMovies } from "@/services/movie.service";
-import { APIResponse, Movie } from "@/types/movie";
+import { APIResponse, Movie } from "@/types/index";
 import { useEffect, useRef, useState } from "react";
 
 export function useTrendingMovies() {
