@@ -1,4 +1,3 @@
-import VideoPlayer from "@/components/VideoPlayer";
 import { Video } from "@/types";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -12,7 +11,6 @@ const MovieTrailerCard = ({ data }: MovieTrailerCardProps) => {
   return (
     <View style={styles.container}>
       <Text>{data.name}</Text>
-      <VideoPlayer id={data.key} />
       <Text>{data.official}</Text>
       <Text>{data.site}</Text>
       <Text>{data.type}</Text>
